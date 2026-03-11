@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="keywords" content="Knowledge Distillation, Efficient AI, Diffusion Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
@@ -80,7 +80,7 @@
     </div>
 
   </div>
-</nav>
+</nav> -->
 
 
 <section class="hero">
@@ -88,15 +88,15 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://keunhong.com">Hyunsoo Han</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://utkarshsinha.com">Sangyeop Yeo</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
+              <a href="https://jonbarron.info">Jaejun Yoo</a><sup>*</sup>,
+            <!-- </span>
             <span class="author-block">
               <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
             </span>
@@ -108,19 +108,20 @@
             </span>
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            </span> -->
+
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup></sup>Ulsan National Institute of Science and Technology (UNIST)</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -129,7 +130,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +139,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,10 +147,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -158,14 +159,14 @@
                   </a>
               </span>
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
           </div>
@@ -177,22 +178,22 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+    <div class="hero-body has-text-centered">
+        <img src="./static/figs/teaser.SVG"
+                  class="interpolation-image"
+                  alt="Interpolation end reference image."
+                  style="width: 100%; height: auto;"/>
+              <!-- <p class="is-bold">End Frame</p> -->
+        <h2 class="subtitle has-text-centered">
+        <!-- Nerfies -->
+        As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+        </h2>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -247,7 +248,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -257,7 +258,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. 
+          To address this problem, we propose a coarse-to-fine distillation framework with \flift~(\lift) and \fplace~(\place). 
+          First, \lift~decomposes the objective into a ``coarse'' alignment and a ``fine'' refinement. The student is then trained on coarse alignment before proceeding to hard refinement. 
+          Second, \fplace~extends LIFT to address spatially non-uniform errors by partitioning outputs into error-based groups, providing locally adaptive guidance.
+          Our comprehensive experimental results demonstrate that ours, \lift~with \place, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. 
+          Furthermore, as compression rates become exceedingly high, conventional knowledge distillation fails to provide sufficient guidance, thereby preventing lightweight diffusion models from achieving stable training. 
+          In contrast, our method demonstrates stable convergence even under such extreme compression ratios.
+          <!-- <p>
             We present the first method capable of photorealistically reconstructing a non-rigidly
             deforming scene using photos/videos captured casually from mobile phones.
           </p>
@@ -282,7 +290,7 @@
             rig with two mobile phones that take time-synchronized photos, yielding train/validation
             images of the same pose at different viewpoints. We show that our method faithfully
             reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            fidelity. -->
           </p>
         </div>
       </div>
@@ -290,7 +298,7 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -298,7 +306,7 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
@@ -307,59 +315,26 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
     <!--/ Matting. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3">Distillation Error Analysis</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <h3 class="title is-4">Decomposing Distillation Error</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            (1) <strong>Coarse-Easy Errors</strong>: The statistical discrepancy between the low-order moments of the two distributions. Minimizing these errors makes stable denoising process in diffusion models.
+          </p>
+          <p>
+            (2) <strong>Fine-Hard Errors</strong>: The remaining, complex discrepancies that are not captured by the first and second-order moments. These errors manifest as the remaining performance gap and a lack of fine-grained details.
+<!-- This error decomposition allows us to move beyond a monolithic KD objective and address these errors separately, as detailed in Sec. \ref{sec:LIFT}. -->
           </p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
+        <!-- <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
             <img src="./static/images/interpolate_start.jpg"
                  class="interpolation-image"
@@ -380,19 +355,19 @@
                  alt="Interpolation end reference image."/>
             <p class="is-bold">End Frame</p>
           </div>
-        </div>
+        </div> -->
         <br/>
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <h3 class="title is-4">Spatially Non-uniform Distillation Error</h3>
         <div class="content has-text-justified">
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
             viewpoint such as a stabilized camera by playing back the training deformations.
           </p>
         </div>
-        <div class="content has-text-centered">
+        <!-- <div class="content has-text-centered">
           <video id="replay-video"
                  controls
                  muted
@@ -402,12 +377,85 @@
             <source src="./static/videos/replay.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
       </div>
     </div>
     <!--/ Animation. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body has-text-centered">
+              <img src="./static/figs/overview.svg"
+                        class="interpolation-image"
+                        alt="Interpolation end reference image."
+                        style="width: 100%; height: auto;"/>
+                    <!-- <p class="is-bold">End Frame</p> -->
+              <h2 class="subtitle has-text-centered">
+              <!-- Nerfies -->
+              As the <span class="dnerf">Capacity Gap</span> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+              </h2>
+          </div>
+        </div>
+        <!-- Interpolating. -->
+        <h3 class="title is-4">LInear FiTting-based Knowledge Distillation</h3>
+        <div class="content has-text-justified">
+          <p>
+            We can also animate the scene by interpolating the deformation latent codes of two input
+            frames. Use the slider here to linearly interpolate between the left frame and the right
+            frame.
+          </p>
+        </div>
+        <!-- <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_start.jpg"
+                 class="interpolation-image"
+                 alt="Interpolate start reference image."/>
+            <p>Start Frame</p>
+          </div>
+          <div class="column interpolation-video-column">
+            <div id="interpolation-image-wrapper">
+              Loading...
+            </div>
+            <input class="slider is-fullwidth is-large is-info"
+                   id="interpolation-slider"
+                   step="1" min="0" max="100" value="0" type="range">
+          </div>
+          <div class="column is-3 has-text-centered">
+            <img src="./static/images/interpolate_end.jpg"
+                 class="interpolation-image"
+                 alt="Interpolation end reference image."/>
+            <p class="is-bold">End Frame</p>
+          </div>
+        </div> -->
+        <br/>
+        <!--/ Interpolating. -->
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-4">Piecewise Local Adaptive Coefficient Estimation</h3>
+        <div class="content has-text-justified">
+          <p>
+            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
+            viewpoint such as a stabilized camera by playing back the training deformations.
+          </p>
+        </div>
+        <!-- <div class="content has-text-centered">
+          <video id="replay-video"
+                 controls
+                 muted
+                 preload
+                 playsinline
+                 width="75%">
+            <source src="./static/videos/replay.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+        <!--/ Re-rendering. -->
+
+      </div>
+    </div>
 
 
     <!-- Concurrent Work. -->
