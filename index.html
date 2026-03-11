@@ -89,30 +89,16 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">LIFT and PLACE: A Simple, Stable, and Effective Knowledge Distillation Framework for Lightweight Diffusion Models</h1>
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-3 publication-authors">
             <span class="author-block">
               <a href="https://keunhong.com">Hyunsoo Han</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Sangyeop Yeo</a><sup></sup>,</span>
+              <a href="https://scholar.google.com/citations?hl=ko&user=O5wO-uYAAAAJ">Sangyeop Yeo</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jaejun Yoo</a><sup>*</sup>,
-            <!-- </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span> -->
-
+              <a href="https://scholar.google.co.kr/citations?user=7NBlQw4AAAAJ&hl=ko">Jaejun Yoo</a><sup>*</sup>,
           </div>
 
-          <div class="is-size-5 publication-authors">
+          <div class="is-size-3 publication-authors">
             <span class="author-block"><sup></sup>Ulsan National Institute of Science and Technology (UNIST)</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
@@ -179,14 +165,32 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body has-text-centered">
-        <img src="./static/figs/teaser.SVG"
+        <!-- <img src="./static/figs/teaser.SVG"
                   class="interpolation-image"
                   alt="Interpolation end reference image."
-                  style="width: 100%; height: auto;"/>
+                  style="width: 100%; height: auto;"/> -->
+        <img src="./static/figs/overview_2.gif"
+                  style="display: block;
+                  margin: 10px auto 35px auto;
+                  width: 100%;
+                  height: auto;
+                  border-radius: 6px;">
               <!-- <p class="is-bold">End Frame</p> -->
         <h2 class="subtitle has-text-centered">
         <!-- Nerfies -->
-        As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+        <!-- As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable. -->
+        <!-- <p>
+          <i>A great scholar is not necessarily a great teacher.</i>
+        </p> -->
+        <p>
+        A larger teacher is not always a better teacher for lightweight diffusion models. 
+        <!-- </p>
+        <p> -->
+        <!-- As the teacher-student <strong>Capacity Gap</strong> widens, distillation becomes harder to optimize, less stable, and ineffective. -->
+        As the teacher-student <strong>Capacity Gap</strong> widens, distillation becomes
+        <span style="color: #d32f2f; font-weight: 700;">harder to optimize, less stable, and ineffective.</span>
+        </span>
+        </p>
         </h2>
     </div>
   </div>
@@ -258,13 +262,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. 
+          <p>
+            We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. To address this problem, we propose a coarse-to-fine distillation framework with LInear FiTting-based distillation (LIFT) and Piecewise Local Adaptive Coefficient Estimation (PLACE). First, LIFT decomposes the objective into a “coarse” alignment and a “fine” refinement. The student is then trained on coarse alignment before proceeding to hard refinement. Second, Piecewise Local Adaptive Coefficient Estimation extends LIFT to address spatially non-uniform errors by partitioning outputs into error-based groups, providing locally adaptive guidance. Our comprehensive experimental results demonstrate that ours, LIFT with PLACE, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. Furthermore, under extreme compression with a 1.3M-parameter student amounting to only 1.6% of the teacher’s parameters, conventional KD fails to provide sufficient guidance for stable training, with FID scores often degrading to 50–200+. In contrast, our method remains stably convergent and achieves an FID of 15.73.
+          </p>
+          <!-- We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. 
           To address this problem, we propose a coarse-to-fine distillation framework with \flift~(\lift) and \fplace~(\place). 
           First, \lift~decomposes the objective into a ``coarse'' alignment and a ``fine'' refinement. The student is then trained on coarse alignment before proceeding to hard refinement. 
           Second, \fplace~extends LIFT to address spatially non-uniform errors by partitioning outputs into error-based groups, providing locally adaptive guidance.
           Our comprehensive experimental results demonstrate that ours, \lift~with \place, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. 
           Furthermore, as compression rates become exceedingly high, conventional knowledge distillation fails to provide sufficient guidance, thereby preventing lightweight diffusion models from achieving stable training. 
-          In contrast, our method demonstrates stable convergence even under such extreme compression ratios.
+          In contrast, our method demonstrates stable convergence even under such extreme compression ratios. -->
           <!-- <p>
             We present the first method capable of photorealistically reconstructing a non-rigidly
             deforming scene using photos/videos captured casually from mobile phones.
@@ -321,50 +328,53 @@
     <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Distillation Error Analysis</h2>
-
+        <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
         <!-- Interpolating. -->
         <h3 class="title is-4">Decomposing Distillation Error</h3>
+        <!-- <div class="container is-max-desktop"> -->
+        <div class="hero-body has-text-centered">
+            <!-- <img src="./static/figs/fig_obs.svg"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/> -->
+            <img src="./static/figs/fig_obs_ani.gif"
+                      style="display: block;
+                      margin: 10px auto 35px auto;
+                      width: 100%;
+                      height: auto;
+                      border-radius: 6px;">
+                  <!-- <p class="is-bold">End Frame</p> -->
+            <!-- <h2 class="subtitle has-text-centered">
+            As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+            </h2> -->
+        </div>
+        <!-- </div> -->
         <div class="content has-text-justified">
           <p>
             (1) <strong>Coarse-Easy Errors</strong>: The statistical discrepancy between the low-order moments of the two distributions. Minimizing these errors makes stable denoising process in diffusion models.
           </p>
           <p>
             (2) <strong>Fine-Hard Errors</strong>: The remaining, complex discrepancies that are not captured by the first and second-order moments. These errors manifest as the remaining performance gap and a lack of fine-grained details.
-<!-- This error decomposition allows us to move beyond a monolithic KD objective and address these errors separately, as detailed in Sec. \ref{sec:LIFT}. -->
           </p>
         </div>
-        <!-- <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div> -->
         <br/>
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
         <h3 class="title is-4">Spatially Non-uniform Distillation Error</h3>
+        <div class="hero-body has-text-centered">
+            <img src="./static/figs/error_map.SVG"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/>
+                  <!-- <p class="is-bold">End Frame</p> -->
+            <!-- <h2 class="subtitle has-text-centered">
+            As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+            </h2> -->
+        </div>
         <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            Distillation error is spatially structured rather than uniform. Hard regions concentrate around semantically important content, motivating locally adaptive guidance.
           </p>
         </div>
         <!-- <div class="content has-text-centered">
@@ -385,7 +395,7 @@
     <!--/ Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Method</h2>
+        <h2 class="title is-3 has-text-centered">Method</h2>
         <div class="container is-max-desktop">
           <div class="hero-body has-text-centered">
               <img src="./static/figs/overview.svg"
@@ -457,6 +467,51 @@
       </div>
     </div>
 
+
+    <!-- Experiments. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="hero-body has-text-centered">
+            <img src="./static/figs/ddpm_table.png"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/>
+                  <!-- <p class="is-bold">End Frame</p> -->
+            <!-- <h2 class="subtitle has-text-centered">
+            As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+            </h2> -->
+        </div>
+        <div class="content has-text-justified">
+          <!-- <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p> -->
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Quantitative Results</h2>
+        <div class="hero-body has-text-centered">
+            <img src="./static/figs/ddpm_table.png"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/>
+                  <!-- <p class="is-bold">End Frame</p> -->
+            <!-- <h2 class="subtitle has-text-centered">
+            As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+            </h2> -->
+        </div>
+        <div class="content has-text-justified">
+          <!-- <p>
+            There's a lot of excellent work that was introduced around the same time as ours.
+          </p> -->
+        </div>
+      </div>
+    </div>
+    <!--/ Experiments. -->
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
