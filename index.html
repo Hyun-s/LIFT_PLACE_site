@@ -440,10 +440,18 @@ MathJax = {
         <h2 class="title is-3 has-text-centered">Method</h2>
         <div class="container is-max-desktop">
           <div class="has-text-centered">
-              <img src="./static/figs/method.svg"
+              <!-- <img src="./static/figs/method.svg"
                         class="interpolation-image"
                         alt="Interpolation end reference image."
-                        style="width: 100%; height: auto;"/>
+                        style="width: 100%; height: auto;"/> -->
+
+              
+              <img src="./static/figs/method.gif"
+                        style="display: block;
+                        margin: 10px auto 35px auto;
+                        width: 100%;
+                        height: auto;
+                        border-radius: 6px;">
                     <!-- <p class="is-bold">End Frame</p> -->
               <!-- <h2 class="subtitle has-text-centered">
               As the <span class="dnerf">Capacity Gap</span> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
@@ -565,70 +573,49 @@ MathJax = {
         <br/>
 
         <!-- Piecewise Local Adaptive Coefficient Estimation (PLACE). -->
-        <h3 class="title is-4 has-text-centered">Piecewise Local Adaptive Coefficient Estimation (PLACE)</h3>
+        <!-- <h3 class="title is-4 has-text-centered">Piecewise Local Adaptive Coefficient Estimation (PLACE)</h3> -->
         <!-- <div class="content has-text-justified">
           <p>
             PLACE extends LIFT to handle spatially non-uniform distillation difficulty. Instead of using a single global alignment for the entire output, PLACE groups output elements by error magnitude and estimates local fitting coefficients for each group. This piecewise strategy preserves the simplicity of LIFT while providing stronger guidance in harder regions, improving fidelity without adding parameters or inference-time overhead.
           </p>
         </div> -->
-        <div class="place-summary has-text-centered">
+        <h3 class="title is-4 has-text-centered place-title">
+          Piecewise Local Adaptive Coefficient Estimation (PLACE)
+        </h3>
+
+        <div class="content has-text-centered">
           <p>
-            PLACE extends LIFT from <strong>global fitting</strong> to <strong>piecewise local fitting</strong>.
-            It partitions output elements into <strong>error-based groups</strong>, estimates
-            <strong>group-wise fitting coefficients</strong>, and provides
-            <strong>locally adaptive guidance</strong> without extra inference-time overhead.
+            PLACE extends LIFT from <strong>single-set coefficient estimation</strong> to
+            <strong>multi-set coefficient estimation</strong> by grouping elements according to distillation error magnitude. 
+            Because distillation error is <strong>spatially non-uniform</strong>, 
+            estimating a single coefficient set for the entire output is often insufficient. 
           </p>
         </div>
 
-        <div class="place-compare">
-          <div class="place-col">
-            <div class="place-col-title">LIFT</div>
-            <div class="place-row">
-              <span class="place-label">Fitting scope</span>
-              <span class="place-value">one global pair \((\beta_0, \beta_1)\)</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Grouping</span>
-              <span class="place-value">not used</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Guidance</span>
-              <span class="place-value">uniform across outputs</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Cost</span>
-              <span class="place-value">no extra inference overhead</span>
+        <div class="columns place-layout">
+          <div class="column is-5">
+            <div class="place-points">
+              <p><strong>Single-set coefficient estimation</strong> cannot fully capture spatially diverse error patterns.</p>
+              <p><strong>Error-based grouping</strong> partitions output elements into distinct local regimes according to their difficulty.</p>
+              <p><strong>Multi-set coefficient estimation</strong> allows separate local fits for each group, similar to piecewise regression.</p>
             </div>
           </div>
 
-          <div class="place-divider">→</div>
-
-          <div class="place-col place-col-highlight">
-            <div class="place-col-title">PLACE</div>
-            <div class="place-row">
-              <span class="place-label">Fitting scope</span>
-              <span class="place-value">group-wise local pairs \((\beta_0^k, \beta_1^k)\)</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Grouping</span>
-              <span class="place-value">partition by error magnitude</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Guidance</span>
-              <span class="place-value">locally adaptive guidance</span>
-            </div>
-            <div class="place-row">
-              <span class="place-label">Cost</span>
-              <span class="place-value">no extra inference overhead</span>
+          <div class="column is-7">
+            <div class="place-figure-wrap">
+              <img
+                src="./static/figs/place.svg"
+                alt="PLACE as piecewise regression"
+                class="place-figure",
+                style="max-width: 500px; width: 100%; height: auto;"
+              />
             </div>
           </div>
         </div>
 
-        <div class="place-chips">
-          <span class="place-chip">error-based grouping</span>
-          <span class="place-chip">local coefficients</span>
-          <span class="place-chip">no inference overhead</span>
-        </div>
+        <p class="place-note">
+          This enables <strong>locally adaptive guidance</strong> by assigning optimal coefficients to different spatial regions, allowing LIFT to more faithfully handle spatially varying distillation difficulty.
+        </p>
         <!-- Piecewise Local Adaptive Coefficient Estimation (PLACE). -->
 
 
@@ -641,7 +628,7 @@ MathJax = {
       <!-- <div class="column is-full-width"> -->
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Experiments</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-centered">
             <p>
               Additional results on text-to-image diffusion (SD 2.1) and DiT can be found in the main paper.
             </p>
@@ -649,7 +636,7 @@ MathJax = {
           <div class="columns is-centered">
             <!-- <div class="column is-full-width"> -->
             <div class="column ">
-              <h3 class="title is-4">Quantitative Results</h3>
+              <h3 class="title is-4 has-text-centered">Quantitative Results</h3>
               <div class="has-text-centered">
                   <img src="./static/figs/ddpm_table.png"
                             class="interpolation-image"
@@ -668,11 +655,11 @@ MathJax = {
             </div>
           </div>
 
-          <br>
+          <!-- <br> -->
           <div class="columns is-centered">
             <!-- <div class="column is-full-width"> -->
             <div class="column ">
-              <h3 class="title is-4">Qualitative Results</h3>
+              <h3 class="title is-4 has-text-centered">Qualitative Results</h3>
               <div class="has-text-centered">
                   <img src="./static/figs/qual.svg"
                             class="interpolation-image"
