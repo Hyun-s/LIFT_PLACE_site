@@ -304,70 +304,63 @@ MathJax = {
     <!-- Animation. -->
     <div class="columns is-centered">
       <!-- <div class="column is-full-width"> -->
-<div class="column is-four-fifths">
-  <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
+        <!-- Interpolating. -->
+        <h4 class="title is-5">Decomposing Distillation Error</h4>
+        <!-- <div class="content has-text-justified">
 
-  <div class="carousel" id="error-analysis-carousel">
-    <!-- Slide 1 -->
-    <div class="item">
-      <div class="slide-inner">
-        <h4 class="title is-5 has-text-centered">Decomposing Distillation Error</h4>
-
+        </div> -->
+        <!-- <div class="container is-max-desktop"> -->
         <div class="has-text-centered">
-          <!-- <img src="./static/figs/fig_obs.SVG"
-               class="interpolation-image"
-               alt="Decomposing distillation error."
-               style="width: 100%; height: auto;" /> -->
-          <img src="./static/figs/fig_obs_ani.gif"
-                    style="display: block;
-                    margin: 10px auto 35px auto;
-                    width: 100%;
-                    height: auto;
-                    border-radius: 6px;">
+            <img src="./static/figs/fig_obs.SVG"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/>
+            <!-- <img src="./static/figs/fig_obs_ani.gif"
+                      style="display: block;
+                      margin: 10px auto 35px auto;
+                      width: 100%;
+                      height: auto;
+                      border-radius: 6px;"> -->
         </div>
-
+        <!-- </div> -->
         <div class="content has-text-justified">
           <p>
-            We show that distillation error is not monolithic. A simple linear regression probe, defined as
-            \( \hat{\epsilon}^{\mathcal T} = \hat{\beta}_0 + \hat{\beta}_1 \epsilon^{\mathcal S} \),
+            We show that distillation error is not monolithic. A simple linear regression probe, defined as 
+            \( \epsilon^{\mathcal T} \approx \hat{\epsilon^{\mathcal S}} =\hat{\beta}_0 + \hat{\beta}_1 \cdot \epsilon^{\mathcal S} \), 
             reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
             and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable
             under large capacity gaps and motivates a coarse-to-fine training strategy.
           </p>
           <p>
-            (1) <strong>Coarse-Easy Errors</strong>:
+            (1) <strong>Coarse-Easy Errors</strong>: 
+            <!-- The statistical discrepancy between the low-order moments of the two distributions. Minimizing these errors makes stable denoising process in diffusion models. -->
             These errors arise from low-order statistical mismatch between teacher and student, such as differences in mean and variance. These errors can be corrected with just two linear regression coefficients, and this simple correction stabilizes the denoising process.
           </p>
           <p>
-            (2) <strong>Fine-Hard Errors</strong>:
+            (2) <strong>Fine-Hard Errors</strong>: 
+            <!-- The remaining, complex discrepancies that are not captured by the first and second-order moments. These errors manifest as the remaining performance gap and a lack of fine-grained details. -->
             These errors are the remaining non-linear residuals that are not captured by low-order moment alignment. They encode fine-grained teacher behavior and are responsible for the remaining performance gap, especially under aggressive compression.
           </p>
-          <br>
         </div>
-      </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="item">
-      <div class="slide-inner">
-        <h4 class="title is-5 has-text-centered">Spatially Non-uniform Distillation Error</h4>
-
+        <!-- <br/> -->
+        <!-- Spatially Non-uniform Distillation Error. -->
+        <h4 class="title is-5">Spatially Non-uniform Distillation Error</h4>
         <div class="has-text-centered">
-          <img src="./static/figs/error_map.SVG"
-               class="interpolation-image"
-               alt="Spatially non-uniform distillation error."
-               style="width: 100%; height: auto;" />
+            <img src="./static/figs/error_map.SVG"
+                      class="interpolation-image"
+                      alt="Interpolation end reference image."
+                      style="width: 100%; height: auto;"/>
         </div>
-
         <div class="content has-text-justified">
           <p>
             Distillation error is spatially structured rather than uniform. We observe that large errors concentrate around semantically meaningful regions and evolve throughout training, indicating that some regions are consistently harder to distill than others. This motivates a method that adapts not only to what is hard to learn, but also to where it is hard to learn.
           </p>
         </div>
+        <!--/ Spatially Non-uniform Distillation Error. -->
+
       </div>
-    </div>
-  </div>
-</div>
     </div>
 
     

@@ -155,3 +155,75 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+
+#error-analysis-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+#error-analysis-carousel .item {
+  padding: 0 0.5rem;
+}
+
+#error-analysis-carousel .slider-item {
+  display: flex;
+  justify-content: center;
+}
+
+#error-analysis-carousel .slide-inner {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#error-analysis-carousel .slider-navigation-previous,
+#error-analysis-carousel .slider-navigation-next {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  /* transition: opacity 0.2s ease; */
+  transition: none;
+}
+
+#error-analysis-carousel:hover .slider-navigation-previous,
+#error-analysis-carousel:hover .slider-navigation-next,
+#error-analysis-carousel:focus-within .slider-navigation-previous,
+#error-analysis-carousel:focus-within .slider-navigation-next {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#error-analysis-carousel .slider-navigation-previous {
+  left: 0.5rem;
+}
+
+#error-analysis-carousel .slider-navigation-next {
+  right: 0.5rem;
+}
+
+#error-analysis-carousel .slider-pagination .slider-page {
+  width: 10px;
+  height: 10px;
+  background: #bdbdbd;
+  opacity: 1;
+}
+
+#error-analysis-carousel .slider-pagination .slider-page.is-active {
+  background: #7B4DFF;
+}
+
+#error-analysis-carousel .slider-pagination {
+  display: flex !important;
+}
