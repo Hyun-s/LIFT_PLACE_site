@@ -328,6 +328,26 @@ MathJax = {
 
               <div class="content has-text-justified">
                 <p>
+                  Distillation error is not monolithic. A simple linear regression probe,
+                  \( \hat{\epsilon}^{\mathcal T} = \hat{\beta}_0 + \hat{\beta}_1 \epsilon^{\mathcal S} \),
+                  reveals two distinct components: <strong>Coarse-Easy Errors</strong> and
+                  <strong>Fine-Hard Errors</strong>.
+                </p>
+
+                <p>
+                  <strong>(1) Coarse-Easy Errors.</strong>
+                  These errors arise from low-order statistical mismatch between teacher and student, such as mean and variance differences.
+                  They can be captured by just two linear regression coefficients, which helps stabilize the denoising process.
+                </p>
+
+                <p>
+                  <strong>(2) Fine-Hard Errors.</strong>
+                  These errors are the remaining non-linear residuals beyond low-order moment alignment.
+                  They encode fine-grained teacher behavior and explain the remaining performance gap under aggressive compression.
+                </p>
+
+            
+                <!-- <p>
                   We show that distillation error is not monolithic. A simple linear regression probe, defined as
                   \( \hat{\epsilon}^{\mathcal T} = \hat{\beta}_0 + \hat{\beta}_1 \epsilon^{\mathcal S} \),
                   reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
@@ -341,9 +361,19 @@ MathJax = {
                 <p>
                   (2) <strong>Fine-Hard Errors</strong>:
                   These errors are the remaining non-linear residuals that are not captured by low-order moment alignment. They encode fine-grained teacher behavior and are responsible for the remaining performance gap, especially under aggressive compression.
-                </p>
-                <br>
+                </p> -->
               </div>
+              <div class="content has-text-centered">
+                <p>
+                  <p>
+                    <strong>Conventional KD learns these two components simultaneously.</strong>
+                    As a result, optimization becomes unstable under large capacity gaps, preventing even
+                    the easy errors from being learned reliably. 
+                    <!-- This motivates our <strong>coarse-to-fine</strong> strategy. -->
+                  </p>
+                </p>
+              </div>
+              <br>
             </div>
           </div>
 
@@ -369,7 +399,7 @@ MathJax = {
                       alt="Temporal evolution of distillation error maps."
                     style="width: 100%; height: auto;" />
                   <p class="spatial-error-caption">
-                    <strong>Temporal evolution.</strong> Error maps remain structured throughout training.
+                    <strong>Across denoising steps.</strong> Distillation error exhibits distinct spatial patterns at each denoising steps.
                   </p>
                 </div>
                 <br>
@@ -380,7 +410,7 @@ MathJax = {
                       alt="Semantic concentration of distillation errors."
                     style="width: 100%; height: auto;" />
                   <p class="spatial-error-caption">
-                    <strong>Semantic concentration.</strong> Large errors cluster around meaningful regions.
+                    <strong>Across training iterations.</strong> Distillation error concentrates on different regions during training.
                   </p>
                 </div>
               </div>
@@ -390,9 +420,8 @@ MathJax = {
               </p> -->
               <br>
               <div class="content has-text-centered spatial-error-intro">
-                <p>
-                  Distillation error is spatially structured rather than uniform. Large errors concentrate on
-                  semantically meaningful regions and persist throughout training.
+                <p class="spatial-error-note">
+                  Distillation error is <strong>spatially non-uniform</strong> across both <strong>diffusion timesteps</strong> and <strong>training iterations</strong>. This suggests that distillation difficulty depends not only on <strong>what</strong> is being learned, but also on <strong>when</strong> and <strong>where</strong> the error arises.
                 </p>
               </div>
 
