@@ -331,8 +331,13 @@
         <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
         <!-- Interpolating. -->
         <h3 class="title is-4">Decomposing Distillation Error</h3>
+        <div class="content has-text-justified">
+          <p>
+            Regression based correction 설명
+          </p>
+        </div>
         <!-- <div class="container is-max-desktop"> -->
-        <div class="hero-body has-text-centered">
+        <div class="hero-body has-text-centered is-paddingless custom-hero">
             <!-- <img src="./static/figs/fig_obs.svg"
                       class="interpolation-image"
                       alt="Interpolation end reference image."
@@ -403,19 +408,16 @@
                         alt="Interpolation end reference image."
                         style="width: 100%; height: auto;"/>
                     <!-- <p class="is-bold">End Frame</p> -->
-              <h2 class="subtitle has-text-centered">
-              <!-- Nerfies -->
+              <!-- <h2 class="subtitle has-text-centered">
               As the <span class="dnerf">Capacity Gap</span> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
-              </h2>
+              </h2> -->
           </div>
         </div>
         <!-- Interpolating. -->
         <h3 class="title is-4">LInear FiTting-based Knowledge Distillation</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
+            LIFT reformulates distillation as a coarse-to-fine objective: first align global statistics, then refine the remaining residual with adaptive weighting.
           </p>
         </div>
         <!-- <div class="columns is-vcentered interpolation-panel">
