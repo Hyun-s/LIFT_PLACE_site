@@ -227,3 +227,314 @@ body {
 #error-analysis-carousel .slider-pagination {
   display: flex !important;
 }
+
+
+/*  */
+/* 
+.lift-title {
+  margin-bottom: 0.75rem;
+}
+
+.lift-lead {
+  max-width: 860px;
+  margin: 0 auto 1.75rem auto;
+}
+
+.lift-lead p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #4a4a4a;
+}
+
+.lift-overview {
+  margin-top: 0.5rem;
+}
+
+.lift-flow {
+  display: grid;
+  grid-template-columns: 1fr 56px 1fr 56px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.lift-step {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 1rem 1rem 0.9rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.lift-step-highlight {
+  border-color: #bfa8ff;
+  box-shadow: 0 6px 18px rgba(123, 77, 255, 0.10);
+}
+
+.lift-step-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  color: #2f2f2f;
+}
+
+.lift-step-formula {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.lift-flow-arrow {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #b5a0e8;
+  line-height: 1;
+}
+
+.lift-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.lift-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+  padding: 1.05rem 1rem 1rem 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 100%;
+}
+
+.lift-card-icon {
+  font-size: 1rem;
+  margin-bottom: 0.45rem;
+  color: #7B4DFF;
+}
+
+.lift-card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin-bottom: 0.55rem;
+}
+
+.lift-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5a5a5a;
+  min-height: 4.8em;
+  margin-bottom: 0.75rem;
+}
+
+.lift-card-formula {
+  font-size: 0.96rem;
+  color: #3f3f3f;
+  line-height: 1.5;
+}
+
+.lift-final {
+  margin-top: 1rem;
+  background: linear-gradient(180deg, #fcfbff 0%, #f7f4ff 100%);
+  border: 1px solid #e4dcff;
+  border-radius: 18px;
+  padding: 0.95rem 1rem;
+  text-align: center;
+}
+
+.lift-final-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #6b5aa6;
+  margin-bottom: 0.35rem;
+}
+
+.lift-final-formula {
+  font-size: 1rem;
+  color: #2f2f2f;
+  line-height: 1.5;
+}
+
+.lift-overview mjx-container {
+  font-size: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .lift-flow {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+
+  .lift-flow-arrow {
+    transform: rotate(90deg);
+    font-size: 1.5rem;
+  }
+
+  .lift-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .lift-card-text {
+    min-height: auto;
+  }
+
+  .lift-lead p,
+  .lift-step-formula,
+  .lift-card-text,
+  .lift-card-formula,
+  .lift-final-formula {
+    font-size: 0.95rem;
+  }
+}
+.lift-inline-num {
+  color: #7B4DFF;
+  font-weight: 700;
+  margin-right: 0.2rem;
+} */
+
+
+.lift-inline-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 999px;
+  background: #f1ebff;
+  color: #7B4DFF;
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-right: 0.22rem;
+  vertical-align: middle;
+}
+
+.lift-overview-v2 {
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.lift-topbox {
+  border: 1px solid #e6e1f7;
+  background: linear-gradient(180deg, #fcfbff 0%, #f8f5ff 100%);
+  border-radius: 18px;
+  padding: 1rem 1rem 1.1rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.lift-top-title {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4b3f72;
+  margin-bottom: 0.85rem;
+}
+
+.lift-top-flow {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lift-eq-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+  padding: 0.9rem 0.9rem 0.8rem 0.9rem;
+  text-align: center;
+}
+
+.lift-eq-card.is-highlight {
+  border-color: #d7c7ff;
+  box-shadow: 0 4px 14px rgba(123, 77, 255, 0.08);
+}
+
+.lift-eq-label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3a3a3a;
+  margin-bottom: 0.35rem;
+}
+
+.lift-eq-formula {
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.lift-top-arrow {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #b29ae8;
+  line-height: 1;
+}
+
+.lift-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.lift-mini-card {
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+  padding: 1rem 0.95rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.lift-mini-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2f2f2f;
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+}
+
+.lift-mini-num {
+  color: #7B4DFF;
+  margin-right: 0.2rem;
+}
+
+.lift-mini-text {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #5c5c5c;
+  min-height: 4.8em;
+  margin-bottom: 0.65rem;
+}
+
+.lift-mini-formula {
+  font-size: 0.95rem;
+  color: #3d3d3d;
+  line-height: 1.5;
+}
+
+.lift-overview-v2 mjx-container {
+  font-size: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .lift-top-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .lift-top-arrow {
+    transform: rotate(90deg);
+  }
+
+  .lift-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lift-mini-text {
+    min-height: auto;
+  }
+}

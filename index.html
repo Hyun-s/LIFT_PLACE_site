@@ -304,70 +304,70 @@ MathJax = {
     <!-- Animation. -->
     <div class="columns is-centered">
       <!-- <div class="column is-full-width"> -->
-<div class="column is-four-fifths">
-  <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
 
-  <div class="carousel" id="error-analysis-carousel">
-    <!-- Slide 1 -->
-    <div class="item">
-      <div class="slide-inner">
-        <h4 class="title is-5 has-text-centered">Decomposing Distillation Error</h4>
+        <div class="carousel" id="error-analysis-carousel">
+          <!-- Slide 1 -->
+          <div class="item">
+            <div class="slide-inner">
+              <h4 class="title is-5 has-text-centered">Decomposing Distillation Error</h4>
 
-        <div class="has-text-centered">
-          <!-- <img src="./static/figs/fig_obs.SVG"
-               class="interpolation-image"
-               alt="Decomposing distillation error."
-               style="width: 100%; height: auto;" /> -->
-          <img src="./static/figs/fig_obs_ani.gif"
-                    style="display: block;
-                    margin: 10px auto 35px auto;
-                    width: 100%;
-                    height: auto;
-                    border-radius: 6px;">
-        </div>
+              <div class="has-text-centered">
+                <!-- <img src="./static/figs/fig_obs.SVG"
+                    class="interpolation-image"
+                    alt="Decomposing distillation error."
+                    style="width: 100%; height: auto;" /> -->
+                <img src="./static/figs/fig_obs_ani.gif"
+                          style="display: block;
+                          margin: 10px auto 35px auto;
+                          width: 100%;
+                          height: auto;
+                          border-radius: 6px;">
+              </div>
 
-        <div class="content has-text-justified">
-          <p>
-            We show that distillation error is not monolithic. A simple linear regression probe, defined as
-            \( \hat{\epsilon}^{\mathcal T} = \hat{\beta}_0 + \hat{\beta}_1 \epsilon^{\mathcal S} \),
-            reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
-            and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable
-            under large capacity gaps and motivates a coarse-to-fine training strategy.
-          </p>
-          <p>
-            (1) <strong>Coarse-Easy Errors</strong>:
-            These errors arise from low-order statistical mismatch between teacher and student, such as differences in mean and variance. These errors can be corrected with just two linear regression coefficients, and this simple correction stabilizes the denoising process.
-          </p>
-          <p>
-            (2) <strong>Fine-Hard Errors</strong>:
-            These errors are the remaining non-linear residuals that are not captured by low-order moment alignment. They encode fine-grained teacher behavior and are responsible for the remaining performance gap, especially under aggressive compression.
-          </p>
-          <br>
+              <div class="content has-text-justified">
+                <p>
+                  We show that distillation error is not monolithic. A simple linear regression probe, defined as
+                  \( \hat{\epsilon}^{\mathcal T} = \hat{\beta}_0 + \hat{\beta}_1 \epsilon^{\mathcal S} \),
+                  reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
+                  and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable
+                  under large capacity gaps and motivates a coarse-to-fine training strategy.
+                </p>
+                <p>
+                  (1) <strong>Coarse-Easy Errors</strong>:
+                  These errors arise from low-order statistical mismatch between teacher and student, such as differences in mean and variance. These errors can be corrected with just two linear regression coefficients, and this simple correction stabilizes the denoising process.
+                </p>
+                <p>
+                  (2) <strong>Fine-Hard Errors</strong>:
+                  These errors are the remaining non-linear residuals that are not captured by low-order moment alignment. They encode fine-grained teacher behavior and are responsible for the remaining performance gap, especially under aggressive compression.
+                </p>
+                <br>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="item">
+            <div class="slide-inner">
+              <h4 class="title is-5 has-text-centered">Spatially Non-uniform Distillation Error</h4>
+
+              <div class="has-text-centered">
+                <img src="./static/figs/error_map.SVG"
+                    class="interpolation-image"
+                    alt="Spatially non-uniform distillation error."
+                    style="width: 100%; height: auto;" />
+              </div>
+
+              <div class="content has-text-justified">
+                <p>
+                  Distillation error is spatially structured rather than uniform. We observe that large errors concentrate around semantically meaningful regions and evolve throughout training, indicating that some regions are consistently harder to distill than others. This motivates a method that adapts not only to what is hard to learn, but also to where it is hard to learn.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="item">
-      <div class="slide-inner">
-        <h4 class="title is-5 has-text-centered">Spatially Non-uniform Distillation Error</h4>
-
-        <div class="has-text-centered">
-          <img src="./static/figs/error_map.SVG"
-               class="interpolation-image"
-               alt="Spatially non-uniform distillation error."
-               style="width: 100%; height: auto;" />
-        </div>
-
-        <div class="content has-text-justified">
-          <p>
-            Distillation error is spatially structured rather than uniform. We observe that large errors concentrate around semantically meaningful regions and evolve throughout training, indicating that some regions are consistently harder to distill than others. This motivates a method that adapts not only to what is hard to learn, but also to where it is hard to learn.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     </div>
 
     
@@ -389,16 +389,118 @@ MathJax = {
               </h2> -->
           </div>
         </div>
-        <!-- Interpolating. -->
-        <h3 class="title is-4">LInear FiTting-based Knowledge Distillation (LIFT)</h3>
+        <!-- LInear FiTting-based Knowledge Distillation (LIFT). -->
+        <!-- <h3 class="title is-4">LInear FiTting-based Knowledge Distillation (LIFT)</h3>
         <div class="content has-text-justified">
           <p>
-            <!-- LIFT reformulates distillation as a coarse-to-fine objective: first align global statistics, then refine the remaining residual with adaptive weighting. -->
             LIFT reformulates diffusion distillation as a <strong><i>“Coarse-to-Fine”</i></strong> objective. It parameterizes teacher-student alignment with linear regression, explicitly separating a coarse alignment term that corrects low-order statistical mismatch from a fine refinement term that models the remaining residual. 
             An adaptive weighting mechanism gradually shifts optimization from coarse correction to fine-detail refinement, enabling stable early training and stronger final performance.
           </p>
+        </div> -->
+        <!-- LInear FiTting-based Knowledge Distillation (LIFT). -->
+
+        <h3 class="title is-4 has-text-centered lift-title">
+          LInear FiTting-based Knowledge Distillation (LIFT)
+        </h3>
+
+        <div class="content has-text-centered">
+          <!-- <p>
+            LIFT reformulates diffusion distillation as a <strong><i>Coarse-to-Fine</i></strong> objective.
+            By parameterizing teacher-student alignment with linear regression, it first captures
+            <strong>Coarse-Easy Errors</strong> and then progressively refines the remaining
+            <strong>Fine-Hard Errors</strong>.
+          </p> -->
+          <!-- <span class="lift-inline-num">③</span> -->
+          <p>
+            LIFT reformulates KD as a <strong><i>Coarse-to-Fine</i></strong> framework. 
+            By parameterizing KD objective with linear regression, 
+            it first captures <strong><span class="lift-inline-num">①</span>Coarse-Easy Errors</strong>, 
+            then refines the remaining <strong><span class="lift-inline-num">②</span>Fine-Hard Errors</strong>, 
+            and finally achieves this Coarse-to-Fine transition through <strong><span class="lift-inline-num">③</span>Adaptive Weighting</strong>.
+          </p>
         </div>
 
+        <div class="lift-overview-v2">
+          <!-- Top: parameterization -->
+          <div class="lift-topbox">
+            <div class="lift-top-title">Parameterizing KD with Linear Regression</div>
+
+            <div class="lift-top-flow">
+              <div class="lift-eq-card">
+                <div class="lift-eq-label">Conventional KD</div>
+                <div class="lift-eq-formula">
+                  \[ 
+                    \arg\min_{\theta^{\mathcal S}} \mathcal{D}(\epsilon^{\mathcal T}, \epsilon^{\mathcal S}) 
+                  \]
+                </div>
+              </div>
+
+              <div class="lift-top-arrow">→</div>
+
+              <div class="lift-eq-card is-highlight">
+                <div class="lift-eq-label">LIFT Parameterization</div>
+                <div class="lift-eq-formula">
+                  \[
+                  \begin{aligned}
+                  \arg\min_{\theta^{\mathcal S}} \quad & \mathcal{D}(\epsilon^{\mathcal T}, \beta_0 + \beta_1 \epsilon^{\mathcal S}) \\
+                  \text{s.t.} \quad & \beta_0 = 0,\ \beta_1 = 1.
+                  \end{aligned}
+                  \]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: three components -->
+          <div class="lift-card-grid">
+            <div class="lift-mini-card">
+              <div class="lift-mini-title">
+                <span class="lift-mini-num">①</span> Coarse-Easy Alignment
+              </div>
+              <div class="lift-mini-text">
+                Capture low-order teacher-student mismatch through coarse alignment.
+              </div>
+              <div class="lift-mini-formula">
+                \[
+                \mathcal{L}_{\text{coarse}} = \lvert \beta_0 \rvert + \lvert \beta_1 - 1 \rvert.
+                \]
+              </div>
+            </div>
+
+            <div class="lift-mini-card">
+              <div class="lift-mini-title">
+                <span class="lift-mini-num">②</span> Fine-Hard Refinement
+              </div>
+              <div class="lift-mini-text">
+                Refine the remaining hard residuals beyond coarse alignment.
+              </div>
+              <div class="lift-mini-formula">
+                \[
+                \mathcal{L}_{\text{fine}} = \left\lVert \epsilon^{\mathcal T} - (\beta_0 + \beta_1 \epsilon^{\mathcal S}) \right\rVert_2^2.
+                \]
+              </div>
+            </div>
+
+            <div class="lift-mini-card">
+              <div class="lift-mini-title">
+                <span class="lift-mini-num">③</span> Adaptive Weighting
+              </div>
+              <div class="lift-mini-text">
+                Gradually shift training from coarse alignment to fine refinement.
+              </div>
+              <div class="lift-mini-formula">
+                \[
+                \begin{aligned}
+                \mathcal{L}_{\text{LIFT}} &= \mathcal{L}_{\text{coarse}} + w \cdot \mathcal{L}_{\text{fine}}, \\
+                w &= 1 - \min(1, \mathcal{L}_{\text{coarse}}).
+                \end{aligned}
+                \]
+              </div>
+            </div>
+          </div>
+        </div>
+       
+     
         <br/>
 
         <!-- Re-rendering. -->
