@@ -271,10 +271,10 @@ MathJax = {
   </div>
 </section> -->
 
-
-<section class="section">
+<!-- Abstract. -->
+<!-- <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -287,59 +287,13 @@ MathJax = {
             <br><br>
             Our comprehensive experimental results demonstrate that ours, <strong>LIFT with PLACE</strong>, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. Furthermore, under extreme compression with a 1.3M-parameter student amounting to only 1.6% of the teacher’s parameters, conventional KD fails to provide sufficient guidance for stable training, with FID scores often degrading to 50–200+. In contrast, our method remains stably convergent and achieves an FID of 15.73.
           </p>
-          <!-- We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. 
-          To address this problem, we propose a coarse-to-fine distillation framework with \flift~(\lift) and \fplace~(\place). 
-          First, \lift~decomposes the objective into a ``coarse'' alignment and a ``fine'' refinement. The student is then trained on coarse alignment before proceeding to hard refinement. 
-          Second, \fplace~extends LIFT to address spatially non-uniform errors by partitioning outputs into error-based groups, providing locally adaptive guidance.
-          Our comprehensive experimental results demonstrate that ours, \lift~with \place, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. 
-          Furthermore, as compression rates become exceedingly high, conventional knowledge distillation fails to provide sufficient guidance, thereby preventing lightweight diffusion models from achieving stable training. 
-          In contrast, our method demonstrates stable convergence even under such extreme compression ratios. -->
-          <!-- <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity. -->
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
-</section>
-
+</section> -->
+<!-- Abstract. -->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -354,18 +308,9 @@ MathJax = {
         <h2 class="title is-3 has-text-centered">Distillation Error Analysis</h2>
         <!-- Interpolating. -->
         <h4 class="title is-5">Decomposing Distillation Error</h4>
-        <div class="content has-text-justified">
-          <!-- <p>
-            We show that distillation error is not monolithic. A simple linear fitting probe reveals that it can be decomposed into two distinct components: Coarse-Easy Errors and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable under large capacity gaps and motivates a coarse-to-fine training strategy.
-          </p> -->
-          <p>
-            We show that distillation error is not monolithic. A simple linear regression probe, defined as 
-            \( \epsilon^{\mathcal T} \approx \hat{\epsilon^{\mathcal S}} =\hat{\beta}_0 + \hat{\beta}_1 \cdot \epsilon^{\mathcal S} \), 
-            reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
-            and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable
-            under large capacity gaps and motivates a coarse-to-fine training strategy.
-          </p>
-        </div>
+        <!-- <div class="content has-text-justified">
+
+        </div> -->
         <!-- <div class="container is-max-desktop"> -->
         <div class="has-text-centered">
             <img src="./static/figs/fig_obs.SVG"
@@ -385,6 +330,13 @@ MathJax = {
         </div>
         <!-- </div> -->
         <div class="content has-text-justified">
+          <p>
+            We show that distillation error is not monolithic. A simple linear regression probe, defined as 
+            \( \epsilon^{\mathcal T} \approx \hat{\epsilon^{\mathcal S}} =\hat{\beta}_0 + \hat{\beta}_1 \cdot \epsilon^{\mathcal S} \), 
+            reveals that it can be decomposed into two distinct components: Coarse-Easy Errors
+            and Fine-Hard Errors. This decomposition explains why conventional KD becomes unstable
+            under large capacity gaps and motivates a coarse-to-fine training strategy.
+          </p>
           <p>
             (1) <strong>Coarse-Easy Errors</strong>: 
             <!-- The statistical discrepancy between the low-order moments of the two distributions. Minimizing these errors makes stable denoising process in diffusion models. -->
@@ -560,6 +512,27 @@ MathJax = {
         </div>
       </div>
     </div>
+    <section class="section">
+      <div class="container is-max-desktop">
+        
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                We demonstrate that in knowledge distillation for diffusion models, the teacher network’s highly complex denoising process—stemming from its substantially larger capacity—poses a significant challenge for the student model to faithfully mimic. 
+                <br><br>
+                To address this problem, we propose a coarse-to-fine distillation framework with 
+                <strong>LI</strong>near <strong>F</strong>i<strong>T</strong>ting-based distillation (<strong>LIFT</strong>) and <strong>P</strong>iecewise <strong>L</strong>ocal <strong>A</strong>daptive <strong>C</strong>oefficient <strong>E</strong>stimation (<strong>PLACE</strong>). First, LIFT decomposes the objective into a “coarse” alignment and a “fine” refinement. The student is then trained on coarse alignment before proceeding to hard refinement. Second, Piecewise Local Adaptive Coefficient Estimation extends LIFT to address spatially non-uniform errors by partitioning outputs into error-based groups, providing locally adaptive guidance. 
+                <br><br>
+                Our comprehensive experimental results demonstrate that ours, <strong>LIFT with PLACE</strong>, outperforms previous knowledge distillation on diffusion models based on both U-Net and DiT architectures. Furthermore, under extreme compression with a 1.3M-parameter student amounting to only 1.6% of the teacher’s parameters, conventional KD fails to provide sufficient guidance for stable training, with FID scores often degrading to 50–200+. In contrast, our method remains stably convergent and achieves an FID of 15.73.
+              </p>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!--/ Experiments. -->
 
     <!-- Concurrent Work. -->
