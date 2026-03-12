@@ -348,22 +348,54 @@ MathJax = {
           </div>
 
           <!-- Slide 2 -->
-          <div class="item">
-            <div class="slide-inner">
-              <h4 class="title is-5 has-text-centered">Spatially Non-uniform Distillation Error</h4>
-
-              <div class="has-text-centered">
+           
+              <!-- <div class="has-text-centered">
                 <img src="./static/figs/error_map.SVG"
                     class="interpolation-image"
                     alt="Spatially non-uniform distillation error."
                     style="width: 100%; height: auto;" />
+              </div> -->
+
+          <div class="item">
+            <div class="slide-inner">
+              
+              <h4 class="title is-5 has-text-centered">Spatially Non-uniform Distillation Error</h4>
+
+              
+              <div class="spatial-error-grid">
+                <div class="spatial-error-panel">
+                  <img src="./static/figs/error_map_left.svg"
+                      class="spatial-error-image"
+                      alt="Temporal evolution of distillation error maps."
+                    style="width: 100%; height: auto;" />
+                  <p class="spatial-error-caption">
+                    <strong>Temporal evolution.</strong> Error maps remain structured throughout training.
+                  </p>
+                </div>
+                <br>
+
+                <div class="spatial-error-panel">
+                  <img src="./static/figs/error_map_right.svg"
+                      class="spatial-error-image"
+                      alt="Semantic concentration of distillation errors."
+                    style="width: 100%; height: auto;" />
+                  <p class="spatial-error-caption">
+                    <strong>Semantic concentration.</strong> Large errors cluster around meaningful regions.
+                  </p>
+                </div>
               </div>
 
-              <div class="content has-text-justified">
+              <!-- <p class="spatial-error-note">
+                This motivates a method that adapts not only to what is hard to learn, but also to where it is hard to learn.
+              </p> -->
+              <br>
+              <div class="content has-text-centered spatial-error-intro">
                 <p>
-                  Distillation error is spatially structured rather than uniform. We observe that large errors concentrate around semantically meaningful regions and evolve throughout training, indicating that some regions are consistently harder to distill than others. This motivates a method that adapts not only to what is hard to learn, but also to where it is hard to learn.
+                  Distillation error is spatially structured rather than uniform. Large errors concentrate on
+                  semantically meaningful regions and persist throughout training.
                 </p>
               </div>
+
             </div>
           </div>
         </div>
@@ -503,25 +535,73 @@ MathJax = {
      
         <br/>
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Piecewise Local Adaptive Coefficient Estimation (PLACE)</h3>
-        <div class="content has-text-justified">
+        <!-- Piecewise Local Adaptive Coefficient Estimation (PLACE). -->
+        <h3 class="title is-4 has-text-centered">Piecewise Local Adaptive Coefficient Estimation (PLACE)</h3>
+        <!-- <div class="content has-text-justified">
           <p>
             PLACE extends LIFT to handle spatially non-uniform distillation difficulty. Instead of using a single global alignment for the entire output, PLACE groups output elements by error magnitude and estimates local fitting coefficients for each group. This piecewise strategy preserves the simplicity of LIFT while providing stronger guidance in harder regions, improving fidelity without adding parameters or inference-time overhead.
           </p>
-        </div>
-        <!-- <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
         </div> -->
-        <!--/ Re-rendering. -->
+        <div class="place-summary has-text-centered">
+          <p>
+            PLACE extends LIFT from <strong>global fitting</strong> to <strong>piecewise local fitting</strong>.
+            It partitions output elements into <strong>error-based groups</strong>, estimates
+            <strong>group-wise fitting coefficients</strong>, and provides
+            <strong>locally adaptive guidance</strong> without extra inference-time overhead.
+          </p>
+        </div>
+
+        <div class="place-compare">
+          <div class="place-col">
+            <div class="place-col-title">LIFT</div>
+            <div class="place-row">
+              <span class="place-label">Fitting scope</span>
+              <span class="place-value">one global pair \((\beta_0, \beta_1)\)</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Grouping</span>
+              <span class="place-value">not used</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Guidance</span>
+              <span class="place-value">uniform across outputs</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Cost</span>
+              <span class="place-value">no extra inference overhead</span>
+            </div>
+          </div>
+
+          <div class="place-divider">→</div>
+
+          <div class="place-col place-col-highlight">
+            <div class="place-col-title">PLACE</div>
+            <div class="place-row">
+              <span class="place-label">Fitting scope</span>
+              <span class="place-value">group-wise local pairs \((\beta_0^k, \beta_1^k)\)</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Grouping</span>
+              <span class="place-value">partition by error magnitude</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Guidance</span>
+              <span class="place-value">locally adaptive guidance</span>
+            </div>
+            <div class="place-row">
+              <span class="place-label">Cost</span>
+              <span class="place-value">no extra inference overhead</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="place-chips">
+          <span class="place-chip">error-based grouping</span>
+          <span class="place-chip">local coefficients</span>
+          <span class="place-chip">no inference overhead</span>
+        </div>
+        <!-- Piecewise Local Adaptive Coefficient Estimation (PLACE). -->
+
 
       </div>
     </div>
