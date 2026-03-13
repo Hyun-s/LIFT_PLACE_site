@@ -632,15 +632,48 @@ MathJax = {
       <!-- <div class="column is-full-width"> -->
       <div class="column is-four-fifths">
         <h2 class="title is-3 has-text-centered">Experiments</h2>
-          <div class="content has-text-centered">
-            <p>
-              Additional results on text-to-image diffusion (SD 2.1) and DiT can be found in the main paper.
-            </p>
+          
+          <!-- <br> -->
+          <div class="columns is-centered">
+            <!-- <div class="column is-full-width"> -->
+            <div class="column ">
+              <h3 class="title is-4 has-text-centered">Qualitative Results</h3>
+              <h4 class="title is-5 has-text-centered">Unconditional Generation</h4>
+              <div class="has-text-centered">
+                  <img src="./static/figs/qual.svg"
+                            class="interpolation-image"
+                            alt="Interpolation end reference image."
+                            style="width: 100%; height: auto;"/>
+                        <!-- <p class="is-bold">End Frame</p> -->
+                  <!-- <h2 class="subtitle has-text-centered">
+                  As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+                  </h2> -->
+              </div>
+              
+              <br><br>
+              <h4 class="title is-5 has-text-centered">Conditional Generation</h4>
+              <div class="has-text-centered">
+                  <img src="./static/figs/qual_2.svg"
+                            class="interpolation-image"
+                            alt="Interpolation end reference image."
+                            style="width: 100%; height: auto;"/>
+                        <!-- <p class="is-bold">End Frame</p> -->
+                  <!-- <h2 class="subtitle has-text-centered">
+                  As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
+                  </h2> -->
+              </div>
+            </div>
           </div>
+
           <div class="columns is-centered">
             <!-- <div class="column is-full-width"> -->
             <div class="column ">
               <h3 class="title is-4 has-text-centered">Quantitative Results</h3>
+              <div class="content has-text-centered">
+                <p>
+                  Additional results on text-to-image diffusion (SD 2.1) and DiT can be found in the main paper.
+                </p>
+              </div>
               <div class="has-text-centered">
                   <img src="./static/figs/ddpm_table.png"
                             class="interpolation-image"
@@ -659,23 +692,7 @@ MathJax = {
             </div>
           </div>
 
-          <!-- <br> -->
-          <div class="columns is-centered">
-            <!-- <div class="column is-full-width"> -->
-            <div class="column ">
-              <h3 class="title is-4 has-text-centered">Qualitative Results</h3>
-              <div class="has-text-centered">
-                  <img src="./static/figs/qual.svg"
-                            class="interpolation-image"
-                            alt="Interpolation end reference image."
-                            style="width: 100%; height: auto;"/>
-                        <!-- <p class="is-bold">End Frame</p> -->
-                  <!-- <h2 class="subtitle has-text-centered">
-                  As the <strong>Capacity Gap</strong> between teacher and student model size increases, the student's performance not only degrades but also becomes increasingly unstable.
-                  </h2> -->
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>
